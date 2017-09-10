@@ -61,7 +61,7 @@ class Sorts {
     right = right || list.length - 1;
 
     const pivot = this.partition(list, left, right);
-
+    console.log(pivot, list[pivot]);
     if(left < pivot - 1) {
       this.quickSort(list, left, pivot - 1);
     }
