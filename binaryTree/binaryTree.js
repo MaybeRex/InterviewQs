@@ -4,31 +4,7 @@
   No duplicate entries will be allowed
  */
 
-/**
- * A binary tree is composed of nodes
- * Each node contains a value, a left pointer and a right pointer
- * @type {[type]}
- */
-class Node {
-  constructor(data) {
-    if(!data) {
-      return new Error('We need data');
-    }
-
-    if(typeof data !== 'object') {
-      return new Error('Data must be an object');
-    }
-
-    if(typeof data.value !== 'number') {
-      return new Error('Data value must be a number');
-    }
-
-    this.value = data.value;
-    this.left = data.left || null;
-    this.right = data.right || null;
-    this.isRoot = data.isRoot || false;
-  }
-}
+const Node = require('./binaryNode');
 
 class BinarySearchTree {
   constructor() {
@@ -87,5 +63,35 @@ class BinarySearchTree {
         return new Error('No duplicates allowed');
       }
     }
+  }
+
+  hasValueDepth(value) {
+    if(typeof value !== 'number') {
+      return new Error('Value must be a number');
+    }
+
+    let pivotNodes = [];
+    let currrentNode = this.root;
+
+    // dig far left looking for the value
+    while (currrentNode.left !== null) {
+      if(this.root.value === value) {
+        return true;
+      }
+
+      // we save these for later in order to traverse back up
+      if(currrentNode.left !== null && currrentNode.right !== null) {
+        pivotNodes.push(currrentNode);
+      }
+
+      // keep it going
+      currrentNode = currrentNode.left;
+    }
+
+    return false;
+  }
+
+  hasValueBreadth() {
+
   }
 }
