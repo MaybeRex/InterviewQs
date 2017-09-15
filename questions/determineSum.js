@@ -5,7 +5,7 @@
  */
 
 class Solution {
-  static containsSum(list, sum) {
+  static containSum(list, sum) {
     if(!Array.isArray(list)) {
       return new Error('Needs an Array as a first param');
     }
@@ -14,14 +14,19 @@ class Solution {
       return new Error('Needs a number as a second param');
     }
 
+    const hashT = {};
+
     for(let i = 0; i < list.length; i++) {
-      for(let j = (i + 1); j < list.length; j++) {
-        if (list[i] + list[j] === sum) {
-          return true;
-        }
+      if(hashT[`${sum = list[i]}`] !== undefined) {
+        return true;
       }
+
+      hashT[list[i].toString()] = list[i];
     }
 
     return false;
   }
 }
+
+console.log(Solution.containSum([5, 4, 2, 4], 8));
+console.log(Solution.containSum([5, 1, 2, 4], 8));

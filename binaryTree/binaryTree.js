@@ -64,34 +64,4 @@ class BinarySearchTree {
       }
     }
   }
-
-  hasValueDepth(value) {
-    if(typeof value !== 'number') {
-      return new Error('Value must be a number');
-    }
-
-    let pivotNodes = [];
-    let currrentNode = this.root;
-
-    // dig far left looking for the value
-    while (currrentNode.left !== null) {
-      if(this.root.value === value) {
-        return true;
-      }
-
-      // we save these for later in order to traverse back up
-      if(currrentNode.left !== null && currrentNode.right !== null) {
-        pivotNodes.push(currrentNode);
-      }
-
-      // keep it going
-      currrentNode = currrentNode.left;
-    }
-
-    return false;
-  }
-
-  hasValueBreadth() {
-
-  }
 }
