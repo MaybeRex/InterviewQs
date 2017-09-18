@@ -58,8 +58,8 @@ function convert(str, rows) { // I don't get it
     return str;
   }
 
-  var n = rows * 2 - 2;
-  var array = [];
+  const n = rows * 2 - 2;
+  const array = [];
 
   // initialize thw rows here
   for(var k = 0 ; k < rows; k++){
