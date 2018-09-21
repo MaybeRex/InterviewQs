@@ -1,61 +1,44 @@
 /*
-  You are given two non-empty linked lists representing two non-negative integers.
-  The digits are stored in reverse order and each of their nodes contain a single digit.
-  Add the two numbers and return it as a linked list.
-
-  You may assume the two numbers do not contain any leading zero, except the number 0 itself.
-
-  Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
-  Output: 7 -> 0 -> 8
-*/
-
-
-/**
- * Definition for singly-linked list.
- * function ListNode(val) {
- *     this.val = val;
- *     this.next = null;
- * }
+  Notes: trick learned here, you can indefinitely add to a linked list by assigning
+  the .next value to the call to recursion
  */
+
+// * Definition for singly-linked list.
+function ListNode(val) {
+  this.val = val;
+  this.next = null;
+}
+
 /**
  * @param {ListNode} l1
  * @param {ListNode} l2
  * @return {ListNode}
  */
-function addTwoNumbers(l1, l2, overflow = 0) {
-  // handle both empty
-  if(l1 === null && l2 === null) {
-    if(overflow > 0) {
-      return new ListNode(overflow);
-    }
-    return null;
+const addTwoNumbers = (
+  first,
+  second,
+  overflow = 0,
+) => {
+  first = first || new ListNode(0);
+  second = second || new ListNode(0);
+
+  const currentFirst = first.val || 0;
+  const currentSecond = second.val || 0;
+
+  let sum = currentFirst + currentSecond + overflow;
+  overflow = 0;
+
+  if (sum > 9) {
+    sum -= 10;
+    overflow = 1;
   }
 
-  // handle one empty
-  if(l1 === null || l2 === null) {
-    let lastNode = l1 || l2;
+  const ans = new ListNode(sum);
 
-    // handle overflow of one
-    if(lastNode.val + overflow > 9) {
-      return addTwoNumbers(lastNode, new ListNode(0), overflow);
-    }
-
-    // handle run ons
-    const newListNode = new ListNode(lastNode.val + overflow);
-    newListNode.next = addTwoNumbers(lastNode.next, null);
-    return newListNode;
+  // NOTE trick learned
+  if (first.next !== null || second.next !== null || overflow > 0) {
+    ans.next = addTwoNumbers(first.next, second.next, overflow);
   }
 
-  // handle normal
-  let sum = l1.val + l2.val + overflow;
-  let extraNum = false;
-
-  if(sum > 9) {
-    extraNum = Number(sum.toString().substring(0,1));
-    sum = Number(sum.toString().substring(1));
-  }
-
-  const newListNode = new ListNode(sum);
-  newListNode.next = addTwoNumbers(l1.next, l2.next, extraNum);
-  return newListNode;
+  return ans;
 };

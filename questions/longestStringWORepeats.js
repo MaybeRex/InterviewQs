@@ -1,15 +1,62 @@
-/*
-  Given a string, find the length of the longest substring without repeating characters.
-
-  Examples:
-
-  Given "abcabcbb", the answer is "abc", which the length is 3.
-  Given "bbbbb", the answer is "b", with the length of 1.
-  Given "pwwkew", the answer is "wke", with the length of 3. Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
+/**
+ * @param {string} s
+ * @return {number}
  */
+// const lengthOfLongestSubstring = (str) => {
+//   let tempCache = new Map();
+//   const letterCache = {};
+//   let removeCount = 0;
+//   str.split('').forEach((letter, i) => {
+//     if (!tempCache.has(letter)) {
+//       tempCache.set(letter, i);
+//       return;
+//     }
+//
+//     const foundIndex = tempCache.get(letter) + 1 - removeCount;
+//     const indexDiff = i - foundIndex;
+//
+//     if (indexDiff >= 1) {
+//       const entries = Array.from(tempCache.entries());
+//       const beginning = new Map(entries.slice(0, foundIndex));
+//
+//       // simple word
+//       if (beginning.size + 1 > (str.length / 2)) {
+//         const word = Array.from(tempCache.keys()).join('');
+//         letterCache[word] = word;
+//         removeCount += word.length;
+//         tempCache = new Map();
+//         tempCache.set(letter, i);
+//         return;
+//       }
+//
+//       tempCache = new Map([...entries.slice(foundIndex), [letter, i]]);
+//       const word = Array.from(beginning.keys()).join('');
+//       letterCache[word] = word;
+//       return;
+//     }
+//
+//     const word = Array.from(tempCache.keys()).join('');
+//     letterCache[word] = word;
+//     removeCount += word.length;
+//     tempCache = new Map();
+//     tempCache.set(letter, i);
+//   });
+//
+//   const lastWord = Array.from(tempCache.keys()).join('');
+//   letterCache[lastWord] = lastWord;
+//
+//   console.log(letterCache);
+//
+//   return Object.values(letterCache).reduce((accum, word) => {
+//     if (word.length > accum.length) {
+//       return word;
+//     }
+//
+//     return accum;
+//   }, '').length || str.length;
+// };
 
-
-function lengthOfLongestSubStr(s) {
+const lengthOfLongestSubStr = (s) => {
   let max = 0;
   let str = '';
   let i = 0;
@@ -29,7 +76,7 @@ function lengthOfLongestSubStr(s) {
     if (i < s.length) {
       str += char;
       cache[char] = i + 1;
-      i++;
+      i += 1;
     }
   }
 
@@ -38,6 +85,11 @@ function lengthOfLongestSubStr(s) {
   }
 
   return max;
-}
+};
 
+console.log(lengthOfLongestSubStr('nfpdmpi'));
+console.log(lengthOfLongestSubStr('jlygy'));
+console.log(lengthOfLongestSubStr('abcb'));
+console.log(lengthOfLongestSubStr('dvdf'));
 console.log(lengthOfLongestSubStr('abcabcbb'));
+console.log(lengthOfLongestSubStr('bbtablud'));
