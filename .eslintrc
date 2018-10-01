@@ -4,5 +4,7 @@
     "no-param-reassign": 0,
     "no-continue": 0,
     "for-direction": 0,
+    "no-mixed-operators": 0,
+    "no-restricted-globals": 0,
   },
 }

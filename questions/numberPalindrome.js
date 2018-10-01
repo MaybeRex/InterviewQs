@@ -1,50 +1,38 @@
-/*
-  Determine whether an integer is a palindrome. Do this without extra space.
- */
+const isPalindrome = (num) => {
+  const str = num.toString();
 
-function isPalindrome(num) {
-  if(num < 0) {
-    return false;
-  }
-
-  if(num < 10) {
+  if (str.length === '1') {
     return true;
   }
 
-  return reverseInt(num) === num;
-}
+  let center = 0;
+  let rightBoundry = 0;
+  let leftBoundry = 0;
 
-// NOTE took this from the prev question
-function reverseInt(num) {
-  const highest = 2147483647;
-  const lowest = -2147483647;
-  if(num > (2e32 - 1)) {
-    return 0;
+  const workingArr = ['$', '#', ...str.split('').join('#').split(''), '#', '@'];
+  const score = new Array(workingArr.length);
+  score.fill(0);
+
+  for (let i = 1; i < workingArr.length - 1; i += 1) {
+    const mirror = (2 * center) - i;
+
+    if (i < rightBoundry) {
+      score[i] = Math.min(rightBoundry - i, score[mirror]);
+    }
+
+    while (workingArr[i + (score[i])] === workingArr[i - (score[i])]) {
+      score[i] += 1;
+    }
+
+    if ((i + score[i]) > rightBoundry) {
+      center = i;
+      rightBoundry = i + score[i];
+      leftBoundry = i - score[i];
+    }
   }
 
-  let isNegative = 1;
-  if(num < 0) {
-    isNegative = -1;
-    num = num * - 1;
-  }
+  return leftBoundry === 0;
+};
 
-  numStr = num.toString();
-
-  if(numStr.length < 2) {
-    return num;
-  }
-
-  let left = 0;
-  let right = numStr.length - 1;
-  let answer = '';
-
-  while(left < right) {
-    answer = `${numStr[right]}${answer}${numStr[left]}`;
-    left++;
-    right--;
-  }
-
-  const reversedNum = Number(answer);
-
-  return reversedNum > highest || reversedNum < lowest ? 0 : reversedNum * isNegative;
-}
+console.log(isPalindrome(121));
+console.log(isPalindrome(-121));
