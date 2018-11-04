@@ -67,7 +67,9 @@ console.log(convert(
 console.log(convert(
   [
     ['A', 'B', 3],
+    ['A', 'F', 5],
     ['B', 'C', 5],
+    ['X', 'Y', 20],
     ['C', 'D', (1 / 15)],
   ],
   'A',
