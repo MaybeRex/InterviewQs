@@ -46,7 +46,7 @@ class Conversions {
       answers.push(Conversions.search(conversionMap, key, endingPoint, visited, count *= value));
     }
 
-    return answers.filter(item => item !== null)[0];
+    return answers[0];
   }
 }
 
@@ -66,9 +66,9 @@ console.log(convert(
 
 console.log(convert(
   [
+    ['B', 'C', 5],
     ['A', 'B', 3],
     ['A', 'F', 5],
-    ['B', 'C', 5],
     ['X', 'Y', 20],
     ['C', 'D', (1 / 15)],
   ],
