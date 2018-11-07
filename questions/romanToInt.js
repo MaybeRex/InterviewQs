@@ -1,35 +1,33 @@
-/*
+const lookup = {
+  M: 1000,
+  D: 500,
+  C: 100,
+  L: 50,
+  X: 10,
+  V: 5,
+  I: 1,
+};
 
-  Given a roman numeral, convert it to an integer.
-  Input is guaranteed to be within the range from 1 to 3999.
-
- */
-
-function romanToInt(s) {
-  const lookup = {
-    M: 1000,
-    D: 500,
-    C: 100,
-    L: 50,
-    X: 10,
-    V: 5,
-    I: 1
-  };
-
+const romanToInt = (str) => {
+  const workingRoman = str.split('').reverse().join('');
   let ans = 0;
-  for(let i = s.length - 1; i >= 0; i--) {
-    const current = lookup[s[i]];
+  for (let i = 0; i < workingRoman.length; i += 1) {
+    const letter = workingRoman[i];
+    const lookupValue = lookup[letter];
 
-    if((current * 4) < ans) {
-      ans -= current;
+    // if current ans is 4 * greater than current lookup, is must be a subtractions
+    // since we go thru this array backwards
+    if (lookupValue * 4 < ans) {
+      ans -= lookupValue;
       continue;
     }
 
-    ans += current;
+    // otherwise, its an addition
+    ans += lookupValue;
   }
 
   return ans;
-}
+};
 
 console.log(romanToInt('MMII'));
 console.log(romanToInt('MMIV'));

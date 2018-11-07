@@ -1,43 +1,43 @@
-/*
-  Given a string, find the length of the longest substring without repeating characters.
-
-  Examples:
-
-  Given "abcabcbb", the answer is "abc", which the length is 3.
-  Given "bbbbb", the answer is "b", with the length of 1.
-  Given "pwwkew", the answer is "wke", with the length of 3. Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
- */
-
-
-function lengthOfLongestSubStr(s) {
+const lengthOfLongestSubstring = (s) => {
   let max = 0;
   let str = '';
   let i = 0;
-  const cache = [];
+  const cache = {};
 
   while (i < s.length) {
     const char = s[i];
-    if (cache[char]) {
-      if (str.length > max) {
-        max = str.length;
-      }
 
+    // found a long substr
+    if (cache[char] && str.length > max) {
+      max = str.length;
+    }
+
+    if (cache[char]) {
       const start = str.indexOf(char);
       str = str.substring(start + 1);
     }
 
-    if (i < s.length) {
-      str += char;
-      cache[char] = i + 1;
-      i++;
+    if (i >= s.length) {
+      break;
     }
+
+    str += char;
+    cache[char] = i + 1;
+    i += 1;
   }
 
+  // captures last one
   if (str.length > max) {
     max = str.length;
   }
 
   return max;
-}
+};
 
-console.log(lengthOfLongestSubStr('abcabcbb'));
+console.log(lengthOfLongestSubstring('nfpdmpi'), 5);
+console.log(lengthOfLongestSubstring('jlygy'), 4);
+console.log(lengthOfLongestSubstring('abcb'), 3);
+console.log(lengthOfLongestSubstring('dvdf'), 3);
+console.log(lengthOfLongestSubstring('abcabcbb'), 3);
+console.log(lengthOfLongestSubstring('bbtablud'), 6);
+console.log(lengthOfLongestSubstring('tmmzuxt'), 5);

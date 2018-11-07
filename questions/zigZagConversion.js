@@ -1,81 +1,82 @@
 /*
-  The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)
+  The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this:
+  (you may want to display this pattern in a fixed font for better legibility)
 
   P   A   H   N
   A P L S I I G
   Y   I   R
   And then read line by line: "PAHNAPLSIIGYIR"
+
   Write the code that will take a string and make this conversion given a number of rows:
 
-  string convert(string text, int nRows);
-  convert("PAYPALISHIRING", 3) should return "PAHNAPLSIIGYIR".
+  string convert(string s, int numRows);
+  Example 1:
+
+  Input: s = "PAYPALISHIRING", numRows = 3
+  Output: "PAHNAPLSIIGYIR"
+  Example 2:
+
+  Input: s = "PAYPALISHIRING", numRows = 4
+  Output: "PINALSIGYAHRPI"
+  Explanation:
+
+  P     I    N
+  A   L S  I G
+  Y A   H R
+  P     I
 */
 
-/**
- * Conversion from zig-zag
- * @param  {String} string  Zig-Zag
- * @param  {Number} rows    Number of rows
- * @return {String}        Compounded String
- */
-function convertFromZigZag(str) {
-  const rows = str.split('\n');
-  const firstRow = rows[0];
-
-  let answer = '';
-
-  for(let i = 0; i < firstRow.length; i++) {
-    let subStr = '';
-    for(let j = 0; j < rows.length; j++) {
-      let char = rows[j][i];
-
-      if(char === undefined) {
-        continue;
-      }
-
-      subStr += char;
-    }
-    subStr = subStr.trim();
-    answer += subStr;
-  }
-
-  return(answer);
-}
-
-// console.log(convertFromZigZag('P   A   H   N\nA P L S I I G\nY   I   R'));
-
-/**
- * Convers to zig zag
- * @param  {String} str  string to be zigged
- * @param  {Number} rows rows to be zagged
- * @return {String}      zig-zagged string
- */
-function convert(str, rows) { // I don't get it
-  if(str == null) {
-    return '';
-  }
-
-  if(rows == 1) {
+const convert = (str, rows) => {
+  if (rows === 1) {
     return str;
   }
 
-  const n = rows * 2 - 2;
-  const array = [];
+  let mainIndex = 0;
+  let isEven = true;
+  const ans = [];
 
-  // initialize thw rows here
-  for(var k = 0 ; k < rows; k++){
-    array.push('');
+  for (let i = 0; i < rows; i += 1) {
+    ans[i] = [];
   }
 
-  for(let i = 0; i < str.length; i++){
-    let lineNumber = i % n;
-    if(lineNumber < rows){
-      array[lineNumber] += str[i];
-    } else {
-      array[ 2 * rows - lineNumber -2] += str[i];
+  while (mainIndex < str.length) {
+    if (isEven) {
+      for (let firstInner = 0; firstInner < rows; firstInner += 1) {
+        if (!str[mainIndex]) {
+          break;
+        }
+        ans[firstInner].push(str[mainIndex]);
+        mainIndex += 1;
+      }
+
+      isEven = false;
+      continue;
     }
+
+    if (rows < 3) {
+      isEven = true;
+      continue;
+    }
+
+    for (let secondInner = rows - 2; secondInner >= 1; secondInner -= 1) {
+      if (!str[mainIndex]) {
+        break;
+      }
+
+      ans[secondInner].push(str[mainIndex]);
+      mainIndex += 1;
+    }
+
+    isEven = true;
   }
 
-  return array.join('');
+  return ans.reduce((accum, next) => accum + next.join(''), '');
 };
 
-console.log(convert("PAYPALISHIRING", 3)); // shoud return PAHNAPLSIIGYIR
+console.log(convert('A', 1) === 'A');
+console.log(convert('ABC', 2) === 'ACB');
+console.log(convert('AB', 2) === 'AB');
+console.log(convert('AB', 1) === 'AB');
+console.log(convert('ABCDEF', 4) === 'ABFCED');
+console.log(convert('PAYPALISHIRING', 3) === 'PAHNAPLSIIGYIR');
+console.log(convert('PAYPALISHIRING', 4) === 'PINALSIGYAHRPI');

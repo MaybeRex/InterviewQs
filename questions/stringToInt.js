@@ -2,55 +2,27 @@
   Implement atoi to convert a string to an integer.
  */
 
-function myAtoi(str) {
-  const max = 2147483647;
-  const min = -2147483648;
+const myAtoi = (str) => {
+  const firsrChar = str.trim()[0];
+  const invalid = isNaN(Number(firsrChar));
+  const whiteList = ['-', '+'];
 
-  let ans = '';
-  let isNeg = 1;
-  let isGarbage = false;
-  let foundLetter = false;
-
-  if(str[0] === ' ') {
-    isGarbage = true;
-    str = str.trim();
-  }
-
-  if(str[0] === '-') {
-    isNeg = -1;
-    isGarbage = true;
-    str = str.substring(1);
-  }
-
-  for(let i = 0; i < str.length; i++) {
-    if(!isNaN(str[i])) {
-      ans += str[i];
-    } else {
-      if(ans === '' && !isGarbage) {
-        isGarbage = true;
-        continue;
-      }
-      break;
-    }
-  }
-
-  let num = Number(ans.split(' ')[0]);
-
-  if(isNaN(num)) {
+  if (invalid && !whiteList.includes(firsrChar)) {
     return 0;
   }
 
-  num = num * isNeg
+  const max = (2 ** 31) - 1;
+  const min = -1 * (max + 1);
+  const trimmed = parseInt(str, 10);
 
-  if(num < min) {
+  if (trimmed < min) {
     return min;
   }
 
-  if(num > max) {
+  if (trimmed > max) {
     return max;
   }
+  return isNaN(trimmed) ? 0 : trimmed;
+};
 
-  return num;
-}
-
-console.log(myAtoi('   +4005'));
+console.log(myAtoi('-1'));
