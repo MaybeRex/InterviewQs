@@ -38,6 +38,7 @@ const isMatch = (text, pattern, i = 0, j = 0, memo = {}) => {
   return memo[matchIndeces];
 };
 
+console.log(isMatch('aaa', '*') === true);
 console.log(isMatch('aaa', 'a*') === true);
 console.log(isMatch('a', 'ab*') === true);
 console.log(isMatch('aaa', 'a*a') === true);
