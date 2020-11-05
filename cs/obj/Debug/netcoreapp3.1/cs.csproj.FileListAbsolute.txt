@@ -1,0 +1,12 @@
+/Users/msolorzano/git-p/InterviewQs/cs/bin/Debug/netcoreapp3.1/cs.deps.json
+/Users/msolorzano/git-p/InterviewQs/cs/bin/Debug/netcoreapp3.1/cs.runtimeconfig.json
+/Users/msolorzano/git-p/InterviewQs/cs/bin/Debug/netcoreapp3.1/cs.runtimeconfig.dev.json
+/Users/msolorzano/git-p/InterviewQs/cs/bin/Debug/netcoreapp3.1/cs.dll
+/Users/msolorzano/git-p/InterviewQs/cs/bin/Debug/netcoreapp3.1/cs.pdb
+/Users/msolorzano/git-p/InterviewQs/cs/obj/Debug/netcoreapp3.1/cs.csprojAssemblyReference.cache
+/Users/msolorzano/git-p/InterviewQs/cs/obj/Debug/netcoreapp3.1/cs.AssemblyInfoInputs.cache
+/Users/msolorzano/git-p/InterviewQs/cs/obj/Debug/netcoreapp3.1/cs.AssemblyInfo.cs
+/Users/msolorzano/git-p/InterviewQs/cs/obj/Debug/netcoreapp3.1/cs.csproj.CoreCompileInputs.cache
+/Users/msolorzano/git-p/InterviewQs/cs/obj/Debug/netcoreapp3.1/cs.dll
+/Users/msolorzano/git-p/InterviewQs/cs/obj/Debug/netcoreapp3.1/cs.pdb
+/Users/msolorzano/git-p/InterviewQs/cs/obj/Debug/netcoreapp3.1/cs.genruntimeconfig.cache
