@@ -14,12 +14,13 @@ const isCircular = (list) => {
   }
 
   let position = 0;
-  const visited = [];
+  const visited = {};
 
   for (let i = 0; i < normalized.length; i += 1) {
     position += normalized[position];
-    if (!visited.includes(position)) {
-      visited.push(position);
+    // takes care of false loops, example [1, 1, 1, -1], last 2 are a false loop
+    if (!visited[position]) {
+      visited[position] = true;
       continue;
     }
     return false;

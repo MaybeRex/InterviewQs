@@ -32,8 +32,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="233560a9-e9e7-492d-9ada-ebc51539de06" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="e2f5a3f9-4641-4e0b-a2fe-360170a5f5e7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/InterviewQs.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/questions/nextSmallestInSeries.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/questions/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/questions/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/questions/circularArray.js" beforeDir="false" afterPath="$PROJECT_DIR$/questions/circularArray.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/questions/lowestSumOfBucketedArrays.js" beforeDir="false" afterPath="$PROJECT_DIR$/questions/lowestSumOfBucketedArrays.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/questions/permute.js" beforeDir="false" afterPath="$PROJECT_DIR$/questions/permute.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,10 +59,10 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1jrE4UEO9IvQkwXGkixG5dUsjOX" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProjectId" id="1k20nnItXeI4PfaRWquhTvG2xGj" />
+  <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -63,18 +74,21 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="233560a9-e9e7-492d-9ada-ebc51539de06" name="Default Changelist" comment="" />
-      <created>1604553620131</created>
+      <changelist id="e2f5a3f9-4641-4e0b-a2fe-360170a5f5e7" name="Default Changelist" comment="" />
+      <created>1604883549171</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1604553620131</updated>
-      <workItem from="1604553621799" duration="5243000" />
+      <updated>1604883549171</updated>
+      <workItem from="1604883550954" duration="3139000" />
     </task>
     <servers />
   </component>
@@ -91,5 +105,11 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="303" y="186" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604887209984">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="303" y="186" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1604887209984" />
   </component>
 </project>
