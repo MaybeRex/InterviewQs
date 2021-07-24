@@ -17,5 +17,9 @@
     "no-mixed-operators": 0,
     "no-restricted-globals": 0,
     "no-unused-expressions": 0,
+    "max-len": 0,
+    "prefer-destructuring": 0,
+    "comma-spacing": 0,
+    "no-return-assign": 0
   },
 }

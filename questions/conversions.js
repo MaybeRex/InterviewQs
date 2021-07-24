@@ -55,23 +55,23 @@ const convert = (conversionList, startingPoint, endingPoint) => {
   return Conversions.search(conversionMap, startingPoint, endingPoint);
 };
 
-console.log(convert(
-  [
-    ['A', 'B', 3],
-    ['B', 'C', 5],
-  ],
-  'A',
-  'C',
-) === 15);
+// console.log(convert(
+//   [
+//     ['A', 'B', 3],
+//     ['B', 'C', 5],
+//   ],
+//   'A',
+//   'C',
+// ));
 
 console.log(convert(
   [
     ['B', 'C', 5],
-    ['A', 'B', 3],
     ['A', 'F', 5],
+    ['A', 'B', 3],
     ['X', 'Y', 20],
     ['C', 'D', (1 / 15)],
   ],
   'A',
   'D',
-) === 1);
+) , 1);

@@ -20,13 +20,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2f5a3f9-4641-4e0b-a2fe-360170a5f5e7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/data/binaryTree.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataStructures/Heap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/questions/breadthFirstAverage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/questions/breadthFirstSearch.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/questions/snapMapToKeys.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/questions/amansTrains.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/questions/decodeWays.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/questions/deleteDuplicatesLinkedList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/questions/deleteDuplicatesLinkedList2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/questions/inorderTraversal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/questions/interleavingStrings.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/questions/largestRectangleHistogram.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/questions/maximalRectangle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/questions/mergeSortedArray.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/questions/numberOfOptions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/questions/printPaths.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/questions/removeDuplicates2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/questions/restoreIpAddresses.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/questions/reversedLinkedList2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/questions/uniqueBinarySearchTrees2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/questions/unscramble.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/questions/validateBinarySearchTree.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/questions/conversions.js" beforeDir="false" afterPath="$PROJECT_DIR$/questions/conversions.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +56,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="1k20nnItXeI4PfaRWquhTvG2xGj" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -56,13 +77,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="12.18.1" />
-    <property name="javascript.nodejs.core.library.typings.version" value="12.19.12" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.21.0" />
+    <property name="javascript.nodejs.core.library.typings.version" value="12.20.14" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -78,6 +99,14 @@
       <workItem from="1610169475424" duration="8000" />
       <workItem from="1610169541369" duration="4441000" />
       <workItem from="1612248648708" duration="4237000" />
+      <workItem from="1622187689049" duration="74000" />
+      <workItem from="1622187782914" duration="27788000" />
+      <workItem from="1622791153365" duration="14244000" />
+      <workItem from="1622967624329" duration="52000" />
+      <workItem from="1622967691399" duration="314000" />
+      <workItem from="1622968064371" duration="1758000" />
+      <workItem from="1623049098972" duration="6184000" />
+      <workItem from="1623178279512" duration="14894000" />
     </task>
     <servers />
   </component>
@@ -95,5 +124,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
